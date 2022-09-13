@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home | Upload CSV for Analysis
+{% endblock title %}
+
+{% block body %}
+    <div class="container">
+        <h1>Upload CSV to analyze</h1>
+        <form action="/results" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Select a file below</label>
+                <input class="form-control" type="file" name="csvfile" id="formFile">
+            </div>
+            <center>
+                <button class="btn btn-primary">Submit</button>
+            </center>
+        </form>
+    </div>
+{% endblock body %}
